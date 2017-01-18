@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1 </title>
+
+	<script type="text/javascript">
+		function func() 
+		{
+			
+			var name = document.getElementById("name").value;
+			
+			var age =  document.getElementById("age").value;
+			var userid =  document.getElementById("userid").value;
+			var password =  document.getElementById("password").value;
+			var address =  document.getElementById("address").value;
+			var number =  document.getElementById("number").value;
+		 	var interests =  document.getElementById("interest").value;
+			var email =  document.getElementById("email").value;
+			
+			// var count1 =0 ;
+			// if (parseInt(name)=="NaN")
+			// {
+			// 	count1 =1 ;
+			// }
+				var count1 =0 ; 
+				if (/[^a-zA-Z]+$/.test(name))
+				{
+					count1 =1 ;
+				}
+				// for (var i =0 ; i<name.length ; i++)
+				// {
+				// 	alert(name[i]);
+				// 	if ((64 < name[i] && name[i] < 92) || (96<name[i] && name[i]<123) || name[i]==32)
+				// 	{
+						
+				// 	}
+				// 	else 
+				// 		count1 =1 ;
+				// }
+				if (count1==1 )
+				{
+					alert("only characters allowed");
+					return false ;
+				}
+
+				var gender = document.getElementsByName("gender");
+				var i ;
+				var count  =0 ; 
+				for(var i =0 ; i<gender.length;i++)
+				{
+					if (gender[i].checked)
+					{
+						count = 1 ;
+					}
+				}
+				if (count ==0 )
+				{
+					alert("Enter Gender");
+					return false ;
+
+				}
+				if (number.length!=10)
+				{
+					alert("only 10 digits allowed ");
+					return false ; 
+
+				}
+				// if (typeof number=='number' and (data%1)===0 )
+				// {
+
+				// }
+				// else 
+				// {
+				// 	alert("Age is not Defined");
+				// }
+			}
+		
+	</script>
+	<style type="text/css">
+		.container 
+		{
+			
+			margin: 50px auto ;
+			width: 60% ;
+			padding: 10px ;
+			border : 2px  solid ;
+			text-align: center ;
+		}
+		#btn 
+		{
+			background-color: cyan	 ; 
+			height: 40px ;
+			width: 80px ;
+			font-size : 15px ;	
+
+		}
+		#center
+		{
+			text-align: center ;
+		}
+	</style>
+</head>
+<body>
+<h1 id='center'>Sign Up	</h1>
+<div class='container'>
+	<form action="result.html" onsubmit="return func();" >
+	
+		<label>Name</label>
+		<input id="name" type="text" name="name" required= 'true'placeholder="Enter your Name"> <br><br>
+		<label>Age</label>
+
+		<input required= 'true' id="age" type="number" name="age" placeholder="Enter your Age"><br><br>
+		<label>Gender</label>
+		<input type="radio" name="gender" value="M">Male
+		<input type="radio" name="gender" value="F">Female <br><br>
+		<label>User Id</label>
+		<input  required= 'true' id= 'userid' type="text" name="userid" placeholder="User Id "><br><br>
+		<label>Password</label>
+		<input required= 'true' id="password" type="password" name="password" placeholder="Type your password"><br><br>
+		<label>Address</label>
+		<input required= 'true' id="address" type="text" name="address" placeholder="Address"><br><br>
+		<label>Mobile Number</label>
+		<input required= 'true' id="number" type="number" name="number" placeholder="Mobile Number"><br><br>
+		<label>Interests</label>
+		<input required= 'true' id="interest" type="textarea" name="interest" placeholder="Your Interests"><br><br>
+		<label>Email</label>
+		<input required= 'true' id="email" type="email" name="email" placeholder="Email Id"><br><br>
+		 
+		<input id = 'btn' type="submit" name="submit" value="Submit">
+
+	</form>	
+</div>
+
+</body>
+</html>
